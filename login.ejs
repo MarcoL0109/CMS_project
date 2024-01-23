@@ -1,0 +1,41 @@
+<html>
+<body>
+    <head>
+        <title> Home Page </title>
+        <link rel = "stylesheet" href="/stylesheets/login.css">
+    </head>
+
+    <div class = "navigation_bar">
+        <nav>
+            <ul class = "elements">
+                <li><a href="#"> Home </a></li>
+                <li><a href="#"> About </a></li>
+                <li><a href="#"> Service </a></li>
+                <li><a href="#"> Content </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class = "login_box">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <input type="email" id="Username" name="username" placeholder="Email Address" required><br><br>
+            <input type="password" id="Password" name="password" placeholder="Password" required><br>
+            
+            <% if (data == 0) { %>
+                <button class="Login_Button1">Log in</button>
+                <span>The username and/or password you specified are not correct</span>
+                <a class="Sign_Up_link1" href="/register">Sign Up</a>
+                <a class="Forgot_password_link1" href="">Forgot Password?</a>
+            <% } else { %>
+                <button class="Login_Button">Log in</button>
+                <a class="Sign_Up_link" href="/register">Sign Up</a>
+                <a class="Forgot_password_link" href="/forgot_password">Forgot Password?</a>
+            <% } %>
+        </form>
+    </div>
+
+</body>
+
+
+</html>

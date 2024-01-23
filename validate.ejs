@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <head>
+            <title> Validation Page</title>
+            <link rel = "stylesheet" href = "/stylesheets/validate.css">
+        </head>
+
+
+        <div class = "navigation_bar">
+            <nav>
+                <ul class = "elements">
+                    <li><a href="/login"> Home </a></li>
+                    <li><a href="#"> About </a></li>
+                    <li><a href="#"> Service </a></li>
+                    <li><a href="#"> Content </a></li>
+                </ul>
+            </nav>
+        </div>
+
+        
+        <span id = "timer">timer</span>
+
+        <div class="validate_box" id="validate_box">
+            <form id="form" action="/validation" method="POST">
+                <h1>Reset</h1>
+                <input type="text" id="code" name="code" placeholder="Validation Code" required><br><br>
+                <button class="Confirm">Confirm</button>
+                <% if (data == 1) { %>
+                    <span class = "error_message">Invalid code</span>
+                <% } %>
+            </form>
+        </div>
+
+        <script>
+
+            let total_time = 180
+            let countdown = setInterval(update, 1000)
+    
+            function update() {
+
+                let min = Math.floor(total_time / 60)
+                let sec = total_time % 60
+    
+                sec = sec >= 10 ? sec : '0' + sec
+    
+                document.getElementById("timer").innerHTML = min + ':' + sec
+    
+                total_time--
+    
+                if (min == 0 && sec == 0) {
+                    clearInterval(countdown)
+                    document.getElementById("timer").innerHTML = 'EXPIRED'
+                }
+            }
+    
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <head>
+            <title>Register Page</title>
+            <link rel = "stylesheet" href = "/stylesheets/regist.css">
+        </head>
+
+
+        <div class = "navigation_bar">
+            <nav>
+                <ul class = "elements">
+                    <li><a href="/login"> Home </a></li>
+                    <li><a href="#"> About </a></li>
+                    <li><a href="#"> Service </a></li>
+                    <li><a href="#"> Content </a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+        <div class="Regist_box" id="Regist_box">
+            <h1>Regist</h1>
+            <form id="form" action="/register" method="POST">
+                <input type="email" id="email_address" name="email_address" placeholder="Email Address" required><br><br>
+                <input type="text" id="username_input" name="username_input" placeholder="Username" required><br><br>
+                <input type="password" id="new_password" name="new_password" placeholder ="Password" required><br><br>
+                <input type="password" id="comfirm_new_password" name="confirm_new_password" placeholder="Confirm Password" required><br>
+                <button class="Regist_button">Regist</button>
+                <% if (data == 1) {%>
+                    <span>Confirmed password not match with password</span>
+                <% } else if (data == 2) { %>
+                    <span>Account already registed</span>
+                <% } %>
+            </form>
+
+        </div>
+
+    </body>
+
+</html>
